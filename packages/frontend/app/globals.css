@@ -1,0 +1,48 @@
+/* Global CSS for ECG Arrhythmia Studio - Neo-Brutalist Dark Mode */
+
+/* CSS Variables for theming */
+:root {
+  --ink: #0A0A0A;
+  --panel: #141414;
+  --border: #303030;
+  --signal: #00F0FF;
+  --lime: #00FF66;
+  --crimson: #FF0055;
+  --yellow: #FFE600;
+}
+
+/* Base styles */
+body {
+  font-family: 'JetBrains Mono', 'Geist Mono', monospace;
+  background-color: var(--ink);
+  color: #E0E0E0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--panel);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

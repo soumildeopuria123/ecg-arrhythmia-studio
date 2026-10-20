@@ -1,0 +1,39 @@
+# Python & Virtual Environment
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.egg-info
+.dist-info
+.venv
+env
+venv
+.env*
+.direnv
+
+# Version Control
+.git
+.gitignore
+
+# Build Artifacts
+*.whl
+*.tar.gz
+
+# IDE & Editor Files
+.vscode
+.idea
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# Test & Coverage
+.coverage
+htmlcov
+pytesthtml
+
+# Docker specific
+Dockerfile
+docker-compose.yml
