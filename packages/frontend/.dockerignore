@@ -1,0 +1,35 @@
+# Node.js specific
+node_modules
+.next
+.next/cache
+*.shard.js
+
+# TypeScript & Source Maps
+*.map
+tsconfig*.json
+
+# Environment files
+.env*
+.local*
+
+# IDE & Editor Files
+.vscode
+.idea
+*.swp
+*.swo
+
+# Logs & Traces
+logs/
+traces/
+
+# Docker specific
+Dockerfile
+docker-compose.yml
+
+# Build cache
+.npm
+yarn.lock
+p-lockfile
+
+# Next.js standalone output optimization (kept for reference)
+*.tmpl
