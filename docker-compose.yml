@@ -1,0 +1,45 @@
+version: '3.8'
+
+networks:
+  ecg-network:
+    driver: bridge
+
+volumes:
+  ecg_data_storage:
+
+services:
+
+  # Backend (FastAPI ML Service)
+  backend:
+    build:
+      context: packages/backend
+      dockerfile: Dockerfile
+    container_name: ecg-backend
+    restart: unless-stopped
+    networks:
+      - ecg-network
+    ports:
+      - "8000:8000"
+    volumes:
+      - ecg_data_storage:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+  # Frontend (Next.js UI)
+  frontend:
+    build:
+      context: packages/frontend
+      dockerfile: Dockerfile
+    container_name: ecg-frontend
+    restart: unless-stopped
+    networks:
+      - ecg-network
+    ports:
+      - "3000:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
