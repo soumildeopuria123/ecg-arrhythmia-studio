@@ -10,13 +10,7 @@ The system takes **raw 1D ECG signals** (360 Hz, MIT-BIH dataset format), proces
 
 ## 🏗️ Visual System Architecture
 
-```mermaid
-graph TD
-    %% === Raw Input Layer ===
-    subgraph Input[Raw ECG Input]
-        direction LR
-        ECG_RAW[1D ECG Signal<br/>360 Hz, MIT-BIH Format]
-    end
+
 
     %% === Preprocessing Block ===
     subgraph Preprocessing[0.5–40 Hz Bandpass Filter]
